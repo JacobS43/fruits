@@ -896,6 +896,7 @@ MonoBehaviour:
   - {fileID: 8823006228593428187, guid: 6fc2dead7ebf5644bb287c4f60ac2760, type: 3}
   _lineRenderer: {fileID: 1569904749}
   curentFruit: {fileID: 0}
+  fruitsParent: {fileID: 348770253}
   fruitsSpawnPointY: 3.95
   isMoveAvailable: 1
   isControlFruits: 0

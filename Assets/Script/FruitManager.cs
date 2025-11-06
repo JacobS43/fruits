@@ -7,6 +7,7 @@ public class FruitManager : MonoBehaviour
     [SerializeField] private Fruit[] _fruitsPrefabs;
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] private Fruit curentFruit;
+    [SerializeField] private Transform fruitsParent;
     
 
 
@@ -91,7 +92,7 @@ public class FruitManager : MonoBehaviour
 
 
         //Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        curentFruit = Instantiate(_fruitsPrefabs[Random.Range(0, _fruitsPrefabs.Length)], spawnPosition, Quaternion.identity);
+        curentFruit = Instantiate(_fruitsPrefabs[Random.Range(0, _fruitsPrefabs.Length)], spawnPosition, Quaternion.identity, fruitsParent);
 
         curentFruit.name = "Fruit" + Random.Range(0, 1000);
     }
@@ -162,7 +163,7 @@ public class FruitManager : MonoBehaviour
 
     private void SpawnMergedFruits(Vector2 spawnPosition, Fruit fruit)
     {
-        Fruit fruitInstance = Instantiate(fruit, spawnPosition, Quaternion.identity);  
+        Fruit fruitInstance = Instantiate(fruit, spawnPosition, Quaternion.identity, fruitsParent);  
         fruitInstance.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
